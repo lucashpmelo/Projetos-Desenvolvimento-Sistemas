@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.ContentPageView"
+             Title="Clientes">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20, 50, 10, 10" BackgroundColor="#FFFACD" HorizontalOptions="FillAndExpand">
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="logo.png" VerticalOptions="Start" Grid.Column="0" Grid.Row="0"/>
+                    <StackLayout Grid.Column="1" Grid.Row="0">
+                        <Label Text="Meu Calhambeque">
+                            <Label.FontSize>
+                                <OnPlatform x:TypeArguments="x:Double">
+                                    <On Platform="IOS">30</On>
+                                    <On Platform="Android, UWP">15</On>
+                                </OnPlatform>
+                            </Label.FontSize>
+                        </Label>
+                        <Label Text="App desenvolvido para livro de Xamarin" Grid.Column="1" Grid.Row="1">
+                            <Label.FontSize>
+                                <OnPlatform x:TypeArguments="x:Double">
+                                    <On Platform="IOS">15</On>
+                                    <On Platform="Android, UWP">8</On>
+                                </OnPlatform>
+                            </Label.FontSize>
+                        </Label>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout BackgroundColor="Black" HorizontalOptions="FillAndExpand" HeightRequest="2" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="0, 0, 0, 20"/>
+                <StackLayout Spacing="{StaticResource SpacingStackLayout}" Padding="0, 5, 0, 0" HorizontalOptions="FillAndExpand">
+                    <Label Text="Nome" FontSize="{StaticResource LabelFontSize}"/>
+                    <Entry FontSize="{StaticResource EntryFontSize}"/>
+                    <Label Text="Telefone" FontSize="{StaticResource LabelFontSize}"/>
+                    <Entry Keyboard="Telephone" FontSize="{StaticResource EntryFontSize}"/>
+                    <Label Text="Endereço" FontSize="{StaticResource LabelFontSize}"/>
+                    <Editor FontSize="{StaticResource EntryFontSize}" HeightRequest="{StaticResource HeightEditor}"/>
+                    <Label HorizontalTextAlignment="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="Informe os dados acima e clique no "/>
+                                    <Span Text="botão" FontSize="22" FontAttributes="Bold"/>
+                                    <Span Text="abaixo"/>
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Button Text="Confirmar dados" BackgroundColor="#96d1ff"/>
+                </StackLayout>                    
+            </StackLayout>
+        </ScrollView>        
+    </ContentPage.Content>
+</ContentPage>

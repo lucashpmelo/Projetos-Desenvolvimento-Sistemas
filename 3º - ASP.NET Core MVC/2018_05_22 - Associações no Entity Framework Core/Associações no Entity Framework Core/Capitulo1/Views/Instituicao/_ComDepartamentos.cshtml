@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Capitulo1.Models.Departamento>
+
+<div class="panel-heading">
+    Relação de Departamentos para a Instituição
+</div>
+<div class="panel-body">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.DepartamentoId)
+                </th>
+                <th> Departamento</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DepartamentoId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div class="panel-footer panel-info">
+</div>
+	</div>

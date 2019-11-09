@@ -1,0 +1,60 @@
+﻿@model Capitulo1.Models.Instituicao
+
+@{
+    Layout = "_LayoutIES";
+}
+
+
+@section styles{
+    <link rel="stylesheet" href="~/lib/fontawesome-free-5.0.12/fontawesome-free-5.0.12/web-fonts-with-css/css/fontawesome.min.css"/>
+}
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["Message"]
+    </div>
+
+}
+
+<div class="card-block">
+    <div class="card-header text-white bg-secondary text-center h1">Exibindo uma instituição existente</div>
+    <div class="=card-body">
+        <div class="form-group">
+            <label asp-for="InstituicaoID" class="control-label"></label>
+            <br />
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="fade fa-key" aria-hidden="true"></i>
+                </span>
+                <input asp-for="InstituicaoID" class="form-control" disabled="disabled" />
+            </div>
+            <label asp-for="Nome" class="control-label"></label>
+            <br />
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="fa-key fa-user-circle-o" aria-hidden="true"></i>
+                </span>
+                <input asp-for="Nome" class="form-control" disabled="disabled" />
+            </div>
+            <label asp-for="Endereco" class="control-label"></label>
+            <br />
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="fa-key fa-address-card-o" aria-hidden="true"></i>
+                </span>
+                <input asp-for="Endereco" class="form-control" disabled="disabled" />
+            </div>
+        </div>
+    </div>
+    <div class="card-footer bg-info text-center text-white">
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="InstituicaoID" />
+            <input type="submit" value="Remover Instituição" class="btn btn-ligth" />
+            <a asp-action="Index" class="btn btn-info">Retornar á listagem de instituições</a>
+        </form>
+    </div>
+</div>
+@section ScriptPage{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
